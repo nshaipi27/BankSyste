@@ -223,7 +223,7 @@ public class BankSystem {
      * @param str  is the user-name being checked against.
      * @return the found account or null if the account isn't found(that should never occur).
      */
-    public static Account account(Bank bank, String str) {
+    private static Account account(Bank bank, String str) {
         Account foundAccount;
         for (int i = 0; i < bank.getAccountList().size(); i++) {
             if (bank.getAccountList().get(i).getUserName().equals(str)) {

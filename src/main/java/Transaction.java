@@ -42,14 +42,7 @@ public class Transaction {
         this.resultingAccount = resultingAccount;
         this.transactionReason = transactionReason;
     }
-
-    /**
-     * Calculates the bank's transaction fees. In my design, for any transaction that is less than 50, the bank performs
-     * a flat flee, while for any transaction greater than 50, the bank performs a percent fee.
-     *
-     * @return the amount of tax for that transaction.
-     */
-    public double calculateTransactionFee(Bank bank) {
+    private double calculateTransactionFee(Bank bank) {
         if (amount < 50) { //perform flat fee
             transactionTax = bank.getFlatFee();
         } else { //perform percent fee
@@ -106,6 +99,6 @@ public class Transaction {
      * @return a concatenated comma-separated string of the amount and transaction reason.
      */
     public String transactionToString() {
-        return "Amount: " + amount + ", " + "Transaction reason: " + transactionReason;
+        return "Amount: " + amount + ", Transaction reason: " + transactionReason;
     }
 }
